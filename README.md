@@ -4,25 +4,25 @@
 
 Documentation at https://jasonwatmore.com/net-7-dapper-mysql-crud-api-tutorial-in-aspnet-core
 
-### Getting Started
+# Getting Started
 
-### Apis documentation
+# Apis documentation
 
 ## OrderController
 
-# Get all orders
+### Get all orders
 
 ```http
   GET /api/order
 ```
 
-# Get order by id
+### Get order by id
 
 ```http
   GET /api/order/{id}
 ```
 
-# Get order by user id
+### Get order by user id
 
 ```http
   GET /api/order/user/{userId}
@@ -30,25 +30,25 @@ Documentation at https://jasonwatmore.com/net-7-dapper-mysql-crud-api-tutorial-i
 
 ## ProductController
 
-# Get all products
+### Get all products
 
 ```http
   GET /api/product
 ```
 
-# Get product by id
+### Get product by id
 
 ```http
   GET /api/product/{id}
 ```
 
-# Get product by category id
+### Get product by category id
 
 ```http
   GET /api/product/category/{categoryId}
 ```
 
-# Get product by author id
+### Get product by author id
 
 ```http
   GET /api/product/author/{authorId}
@@ -56,13 +56,13 @@ Documentation at https://jasonwatmore.com/net-7-dapper-mysql-crud-api-tutorial-i
 
 ## UserController
 
-# Get all users
+### Get all users
 
 ```http
   GET /api/users
 ```
 
-# Get user by id
+### Get user by id
 
 ```http
   GET /api/users/{id}
