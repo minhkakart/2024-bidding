@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>WebApi</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Darin.IdentityServer4.Dapper" Version="1.0.8" />
+    <PackageReference Include="Darin.IdentityServer4.Dapper.Mysql" Version="1.0.4" />
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
+  </ItemGroup>
+</Project>
