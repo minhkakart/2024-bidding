@@ -6,6 +6,11 @@ Documentation at https://jasonwatmore.com/net-7-dapper-mysql-crud-api-tutorial-i
 
 # Getting Started
 
+## Prepare MySQL Database
+
+Create a new MySQL database named `dotnet-7-dapper-crud-api1` and import the `dotnet-7-dapper-crud-api1.sql` file located in the root of the project to create the required table and seed some test data.
+
+
 # Apis documentation
 
 ## OrderController
