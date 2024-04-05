@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApi.DTOs;
-using WebApi.Entities;
 using WebApi.Services;
 
 namespace WebApi.Controllers
 {
+
+	// partial class Params
+	// {
+	// 	public int? page { get; set; } = 1;
+	// }
+
 	[ApiController]
 	[Route("api/[controller]")]
 	public class ProductController(IProductService productService)
@@ -12,9 +17,9 @@ namespace WebApi.Controllers
 		private readonly IProductService _productService = productService;
 
 		[HttpGet]
-		public async Task<IEnumerable<ProductDTO>> GetAll()
+		public async Task<PaginateProduct> GetAll([FromQuery] int page)
 		{
-			return await _productService.GetAll();
+			return await _productService.GetAll(page == 0 ? 1 : page);
 		}
 
 		[HttpGet("{id}")]
@@ -34,5 +39,12 @@ namespace WebApi.Controllers
 		{
 			return await _productService.GetAllByAuthor(author_id);
 		}
+
+		[HttpGet("search")]
+		public async Task<PaginateProduct> SearchByName([FromQuery] string name, [FromQuery] int page)
+		{
+			return await _productService.SearchByName(name, page == 0 ? 1 : page);
+		}
+
 	}
 }

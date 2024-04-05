@@ -7,13 +7,14 @@ namespace WebApi.Services
 {
 	public interface IProductService
 	{
-		Task<IEnumerable<ProductDTO>> GetAll();
+		Task<PaginateProduct> GetAll(int page);
 		Task<ProductDTO> GetById(int id);
 		Task Create(Product product);
 		Task Update(Product product);
 		Task Delete(int id);
 		Task<IEnumerable<ProductDTO>> GetAllByCategory(int category_id);
 		Task<IEnumerable<ProductDTO>> GetAllByAuthor(int author_id);
+		Task<PaginateProduct> SearchByName(string name, int page);
 	}
 	public class ProductService(IProductRepository productRepository) : IProductService
 	{
@@ -29,9 +30,9 @@ namespace WebApi.Services
 			throw new NotImplementedException();
 		}
 
-		public async Task<IEnumerable<ProductDTO>> GetAll()
+		public async Task<PaginateProduct> GetAll(int page)
 		{
-			return await _productRepository.GetAll();
+			return await _productRepository.GetAll(page);
 		}
 
 		public async Task<IEnumerable<ProductDTO>> GetAllByAuthor(int author_id)
@@ -47,6 +48,11 @@ namespace WebApi.Services
 		public async Task<ProductDTO> GetById(int id)
 		{
 			return await _productRepository.GetById(id);
+		}
+
+		public async Task<PaginateProduct> SearchByName(string name, int page)
+		{
+			return await _productRepository.SearchByName(name, page);
 		}
 
 		public Task Update(Product product)

@@ -101,7 +101,7 @@ namespace WebApi
 			services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 			services.AddScoped<IUserProfileService, UserProfileService>();
 
-			services.BuildServiceProvider().CreateScope().ServiceProvider.GetRequiredService<DataContext>().Init().Wait();
+			// services.BuildServiceProvider().CreateScope().ServiceProvider.GetRequiredService<DataContext>().Init().Wait();
 			
 			
 		}

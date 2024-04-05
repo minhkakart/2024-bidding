@@ -86,12 +86,12 @@ public class DataContext
 			var sql = """
 				CREATE TABLE IF NOT EXISTS UserProfile (
 					profile_id INT NOT NULL AUTO_INCREMENT,
-					user_id INT,
+					user_id VARCHAR(255),
 					fullname VARCHAR(255),
 					phone VARCHAR(255),
 					email VARCHAR(255),
 					address VARCHAR(255),
-					PRIMARY KEY (profile_id), FOREIGN KEY (user_id) REFERENCES User(user_id)
+					PRIMARY KEY (profile_id), FOREIGN KEY (user_id) REFERENCES aspnetusers(Id) ON DELETE CASCADE
 				);
 			""";
 			await connection.ExecuteAsync(sql);
@@ -169,10 +169,10 @@ public class DataContext
 			var sql = """
 				CREATE TABLE IF NOT EXISTS Orders (
 				order_id INT NOT NULL AUTO_INCREMENT,
-				user_id INT,
+				user_id varchar(255),
 				order_date DATETIME,
 				PRIMARY KEY (order_id),
-				FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
+				FOREIGN KEY (user_id) REFERENCES aspnetusers(Id) ON DELETE CASCADE
 				);
 				""";
 			await connection.ExecuteAsync(sql);
